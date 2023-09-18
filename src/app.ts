@@ -1,36 +1,32 @@
 console.log("mehdi");
 
-import { Exercise } from "./model/Exercise";
-import { ReversePyramindProgression } from "./model/Progression";
-import Workout from "./model/Workout";
+import { Exercise } from "./model/now/Exercise";
 
-const inclineBench = new Exercise(
-  "Incline Bench",
-  "Mr.Hollywood's favorite exercise.",
-  "compound"
+// Define Exercises
+// Day 1
+// Superset
+const OHP = new Exercise("OHP");
+const ChinUps = new Exercise("Chin Ups");
+// Superset
+const LeaningLateralRaise = new Exercise("Leaning Lateral Raise");
+const OverheadTricepExtension = new Exercise(
+  "One Arm Overhead Tricep Extension",
+  {
+    variation: "One Arm",
+  }
 );
 
-const reversePyramidTrainingInclineBench = new ReversePyramindProgression(
-  155,
-  5
-);
+// Day 2
+// Superset
+const SLDL = new Exercise("Deadlift", { variation: "Single Leg" });
+const BulgarianSplitSquat = new Exercise("Bulgarian Split Squat");
+// Superset
+const Shrugs = new Exercise("Shrugs");
+const SingleLegHipThrust = new Exercise("Single Leg Hip Thrust");
 
-const reversePyramidTrainingOhp = new ReversePyramindProgression(90, 5);
-
-const workoutInclineBenchRPT = new Workout(
-  "Mr.Hollywood Incline Bench",
-  reversePyramidTrainingInclineBench
-);
-
-workoutInclineBenchRPT.addExercise({ exerciseId: 1, weekNumber: 2 });
-
-console.dir(workoutInclineBenchRPT.getWorkoutForWeek(2), { depth: 20 });
-
-const workoutOhpRpt = new Workout(
-  "Mr.Hollywood OHP",
-  reversePyramidTrainingOhp
-);
-
-workoutOhpRpt.addExercise({ exerciseId: 2, weekNumber: 2 });
-
-console.dir(workoutOhpRpt.getWorkoutForWeek(2), { depth: 20 });
+// Day 3
+const InclineBench = new Exercise("Incline Bench");
+// Superset
+const BicepCurls = new Exercise("Bicep Curls");
+const BentOverFly = new Exercise("Bent Over Fly");
+const HangingKneeRaise = new Exercise("Hanging Knee Raise");

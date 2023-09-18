@@ -11,6 +11,8 @@ Workout Model
 import { Exercise, ExerciseForWorkout } from "./Exercise";
 import { ProgressionModel } from "./Progression";
 
+const EXCERCISES = [];
+
 interface WorkoutInformation {
   name: string;
   exercises: WorkoutComponent[];
@@ -22,6 +24,8 @@ export default class Workout {
     public progressionModel: ProgressionModel,
     public exercises: WorkoutComponent[] = []
   ) {}
+
+  private findExercise(exerciseId: number): Exercise | undefined {}
 
   // define method to add ExcerciseForWorkout, to an array of exercises
   addExercise(exercise: { exerciseId: number; weekNumber: number }): void {
