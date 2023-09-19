@@ -3,35 +3,55 @@ console.log("mehdi");
 import { Exercise } from "./model/now/Exercise";
 import { WorkoutComponent } from "./model/now/WorkoutComponent";
 import { Workout } from "./model/now/Workout";
+import { LinearProgression, RepProgression } from "./model/now/Progression";
 
 // Define Exercises
 // Day 1
 // Superset
-const OHP = new Exercise("OHP");
-const ChinUps = new Exercise("Chin Ups");
+const OHP = new Exercise("OHP", new LinearProgression("OHP", 125));
+const ChinUps = new Exercise("Chin Ups", new LinearProgression("Chin Ups", 30));
 // Superset
-const LeaningLateralRaise = new Exercise("Leaning Lateral Raise");
+const LeaningLateralRaise = new Exercise(
+  "Leaning Lateral Raise",
+  new RepProgression("Leaning Lateral Raise", 25)
+);
 const OverheadTricepExtension = new Exercise(
   "One Arm Overhead Tricep Extension",
-  {
-    variation: "One Arm",
-  }
+  new RepProgression("One Arm Overhead Tricep Extension", 35)
 );
 
 // Day 2
 // Superset
-const SLDL = new Exercise("Deadlift", { variation: "Single Leg" });
-const BulgarianSplitSquat = new Exercise("Bulgarian Split Squat");
+const SLDL = new Exercise("Deadlift", new LinearProgression("Deadlift", 100));
+const BulgarianSplitSquat = new Exercise(
+  "Bulgarian Split Squat",
+  new LinearProgression("Bulgarian Split Squat", 100)
+);
 // Superset
-const Shrugs = new Exercise("Shrugs");
-const SingleLegHipThrust = new Exercise("Single Leg Hip Thrust");
+const Shrugs = new Exercise("Shrugs", new RepProgression("Shrugs", 100));
+const SingleLegHipThrust = new Exercise(
+  "Single Leg Hip Thrust",
+  new RepProgression("Single Leg Hip Thrust", 0)
+);
 
 // Day 3
-const InclineBench = new Exercise("Incline Bench");
+const InclineBench = new Exercise(
+  "Incline Bench",
+  new LinearProgression("Incline Bench", 185)
+);
 // Superset
-const BicepCurls = new Exercise("Bicep Curls");
-const BentOverFly = new Exercise("Bent Over Fly");
-const HangingKneeRaise = new Exercise("Hanging Knee Raise");
+const BicepCurls = new Exercise(
+  "Bicep Curls",
+  new RepProgression("Bicep Curls", 35)
+);
+const BentOverFly = new Exercise(
+  "Bent Over Fly",
+  new RepProgression("Bent Over Fly", 25)
+);
+const HangingKneeRaise = new Exercise(
+  "Hanging Knee Raise",
+  new RepProgression("Hanging Knee Raise", 0)
+);
 
 // Define Workout Components
 // Day 1

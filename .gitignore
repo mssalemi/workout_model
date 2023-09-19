@@ -40,3 +40,7 @@ test/*.js
 *.map
 
 ./build
+
+/build
+
+build
